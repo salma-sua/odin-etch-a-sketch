@@ -1,18 +1,24 @@
 const grid = document.querySelector('.grid');
+const button = document.querySelector('.btn');
 
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-        const etch = document.createElement('div');
-        etch.classList.add('etch');
-        grid.appendChild(etch);
-        grid.addEventListener("hover", () => {
-            grid.style.backgroundColor= "blue";
-        });
-    }
-}
+button.addEventListener('click', () => {
+    const dimension = prompt("Enter the desired grid size. Value must NOT exceed 100.");
+    if (dimension < 99) {
+        for (let i = 0; i < dimension; i++) {
+            const etchCol = document.createElement('div');
+            etchCol.classList.add('etch-col');
+            grid.appendChild(etchCol);
+            for (let j = 0; j < dimension; j++) {
+                const etchRow = document.createElement('div');
+                etchRow.classList.add('etch-row');
+                etchCol.appendChild(etchRow);
 
-function message() {
-    prompt("Enter the desired size of the grid.");
-}
-
-console.log(grid)
+                etchRow.addEventListener('mouseover', (event) => {
+                    event.target.style.backgroundColor = 'white';
+                });
+            }
+        }
+    } else {
+        alert("Please enter a value less than 100.");
+    }    
+});
