@@ -1,0 +1,15 @@
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+.cell {
+    border: 1px solid pink;
+    background-color: white;
+    margin: 1px;
+    width: calc(100% / 16);
+    height: calc(100% / 16);
+}
