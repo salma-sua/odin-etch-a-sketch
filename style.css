@@ -1,15 +1,25 @@
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: lightblue;
+    margin: 10px;
+    border: 1px solid black;
 }
 
-.cell {
-    border: 1px solid pink;
-    background-color: white;
-    margin: 1px;
-    width: calc(100% / 16);
-    height: calc(100% / 16);
+.grid > div {
+    display: flex;
+}
+
+div > .etch-row {
+    width: 10px;
+    height: 10px;
+}
+
+button {
+    font-weight: bold;
+    color: white;
+    padding: 16px;
+    background-color: lightcoral;
+}
+
+button:hover {
+    background-color: wheat;
 }
